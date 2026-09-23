@@ -713,6 +713,13 @@ header small {
   font-style: italic;
 }
 
+/* Certification cards — clickable cue */
+.cert-card {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
 .cert-hint {
   display: block;
   margin-top: 12px;
