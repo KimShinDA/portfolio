@@ -421,8 +421,7 @@ header small {
 }
 
 /* =========================
-   ENHANCED SEMINAR CARDS
-   — techy minimal redesign
+   Seminar Cards
 ========================= */
 .seminar-list {
   display: flex;
@@ -675,6 +674,9 @@ header small {
    Certifications Section
 ========================= */
 .cert-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
@@ -709,13 +711,6 @@ header small {
   font-size: 0.75rem;
   color: var(--text-secondary);
   font-style: italic;
-}
-
-/* Certification cards — clickable cue */
-.cert-card {
-  position: relative;
-  cursor: pointer;
-  transition: all 0.25s ease;
 }
 
 .cert-hint {
@@ -811,7 +806,7 @@ header small {
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 16px;
-  padding-right: 30px; /* space for close button */
+  padding-right: 30px;
 }
 
 .resume-header h3 {
@@ -883,24 +878,8 @@ header small {
   text-decoration: underline;
 }
 
-/* Mobile adjustments for resume modal */
-@media (max-width: 900px) {
-  .resume-modal-content {
-    padding: 20px 16px;
-  }
-  .resume-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  .resume-viewer iframe {
-    height: 55vh;
-    min-height: 350px;
-  }
-}
-
 /* =========================
-   Modal for Certificates
+   Modal Base
 ========================= */
 .modal {
   display: none;
@@ -927,6 +906,8 @@ header small {
   border-radius: var(--radius-lg);
   max-width: 700px;
   width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
   box-shadow: var(--shadow-lg);
   position: relative;
   text-align: center;
@@ -948,29 +929,37 @@ header small {
   cursor: pointer;
   transition: color 0.2s ease;
   line-height: 1;
+  z-index: 10;
+  padding: 4px 8px;
 }
 
 .close-modal:hover {
   color: var(--burgundy-dark);
 }
 
-/* =========================
-   Modal Media Container
-========================= */
-.modal-image-space img,
-.modal-image-space iframe {
+.modal-content h3 {
+  margin: 0 0 20px;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--burgundy-dark);
+}
+
+.modal-image-space {
   width: 100%;
-  height: 100%;
-  border: none;
-  display: none;
+  height: 500px;
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 2px dashed var(--pink-soft);
 }
 
 .modal-image-space img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-}
-
-.modal-image-space iframe {
-  background: #f5f5f5;
+  display: none;
 }
 
 .modal-image-space p {
@@ -1072,16 +1061,32 @@ header small {
     padding: 20px;
   }
 
-  /* Seminar mobile adjustments */
+  .resume-modal-content {
+    padding: 20px 16px;
+  }
+
+  .resume-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .resume-viewer iframe {
+    height: 55vh;
+    min-height: 350px;
+  }
+
   .seminar-item {
     flex-direction: column;
     padding: 18px;
   }
+
   .seminar-icon {
     width: 36px;
     height: 36px;
     font-size: 1rem;
   }
+
   .seminar-meta {
     flex-direction: column;
     align-items: flex-start;

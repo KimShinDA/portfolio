@@ -28,38 +28,22 @@ pageButtons.forEach((button) => {
 });
 
 // =========================
-// Resume Modal Logic
+// Element References
 // =========================
 const resumeModal = document.getElementById("resumeModal");
 const resumeBtn = document.getElementById("resumeBtn");
 const closeResume = document.getElementById("closeResume");
 
-if (resumeBtn && resumeModal) {
-  resumeBtn.addEventListener("click", () => {
-    resumeModal.classList.add("active");
-  });
-}
-
-if (closeResume) {
-  closeResume.addEventListener("click", () => {
-    resumeModal.classList.remove("active");
-  });
-}
-
-// =========================
-// Certificate / Credential Modal Logic
-// =========================
 const modal = document.getElementById("certModal");
 const modalTitle = document.getElementById("modalTitle");
 const modalImage = document.getElementById("modalImage");
 const modalPlaceholder = document.getElementById("modalPlaceholder");
+const closeCert = document.getElementById("closeCert");
 
-// ✅ FIXED: target ONLY the close button inside #certModal
-const closeModal = document.querySelector("#certModal .close-modal");
-
-// 📁 Add your certificate image paths here (files inside your VS Code project)
+// =========================
+// Certificate Image Map
+// =========================
 const certificateImages = {
-  // Certification cards
   cert1: "media/KSDA-PMI-CERT.jpg",
   cert2: "media/DEVNET.jpg",
   cert3: "media/LINUX.jpg",
@@ -68,15 +52,22 @@ const certificateImages = {
   cert6: "media/CCSTN.jpg",
   cert7: "media/PYTHON.jpg",
   cert8: "media/CCNA-INTRO.jpg",
-
-  // Seminar certificates
   seminar1: "media/DATA-ANALYTICS.jpg",
   seminar2: "media/SQL-DATA-MANAGEMENT.png"
 };
 
-/**
- * Reset the modal media area.
- */
+// =========================
+// Resume Modal Open
+// =========================
+if (resumeBtn && resumeModal) {
+  resumeBtn.addEventListener("click", () => {
+    resumeModal.classList.add("active");
+  });
+}
+
+// =========================
+// Certificate Modal Helpers
+// =========================
 function resetModalMedia() {
   modalImage.style.display = "none";
   modalImage.src = "";
@@ -84,10 +75,7 @@ function resetModalMedia() {
   modalPlaceholder.textContent = "";
 }
 
-/**
- * Open the modal with an image.
- */
-function openModal(title, src) {
+function openCertModal(title, src) {
   resetModalMedia();
   modalTitle.textContent = title;
 
@@ -108,16 +96,20 @@ function openModal(title, src) {
   modal.classList.add("active");
 }
 
-// ---- Certification Cards (data-cert) ----
+// =========================
+// Certification Cards
+// =========================
 document.querySelectorAll(".cert-card").forEach((card) => {
   card.addEventListener("click", () => {
     const certId = card.dataset.cert;
     const certTitle = card.querySelector("h3").textContent;
-    openModal(certTitle, certificateImages[certId]);
+    openCertModal(certTitle, certificateImages[certId]);
   });
 });
 
-// ---- Seminar Credential Links (data-cert) ----
+// =========================
+// Seminar Credential Links
+// =========================
 document.querySelectorAll(".credential-link").forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
@@ -125,34 +117,44 @@ document.querySelectorAll(".credential-link").forEach((link) => {
     const certTitle = link
       .closest(".seminar-content")
       .querySelector("h4").textContent;
-    openModal(certTitle, certificateImages[certId]);
+    openCertModal(certTitle, certificateImages[certId]);
   });
 });
 
-// ---- Close Certificate Modal ----
-if (closeModal) {
-  closeModal.addEventListener("click", () => {
+// =========================
+// Close Buttons (with stopPropagation)
+// =========================
+if (closeResume && resumeModal) {
+  closeResume.addEventListener("click", (e) => {
+    e.stopPropagation();
+    resumeModal.classList.remove("active");
+  });
+}
+
+if (closeCert && modal) {
+  closeCert.addEventListener("click", (e) => {
+    e.stopPropagation();
     modal.classList.remove("active");
     resetModalMedia();
   });
 }
 
 // =========================
-// Unified Global Handlers
+// Click Outside to Close
 // =========================
-
-// Click outside to close
 window.addEventListener("click", (e) => {
-  if (resumeModal && e.target === resumeModal) {
+  if (e.target === resumeModal) {
     resumeModal.classList.remove("active");
   }
-  if (modal && e.target === modal) {
+  if (e.target === modal) {
     modal.classList.remove("active");
     resetModalMedia();
   }
 });
 
-// Escape key to close
+// =========================
+// Escape Key to Close
+// =========================
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     if (resumeModal && resumeModal.classList.contains("active")) {
