@@ -1,378 +1,284 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kim Shin E. Del Amen | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="shell">
-    <aside class="sidebar">
-      <div class="profile-pic-space">
-        <img src="media/1X1.png" alt="Profile Photo">
-      </div>
-      
-      <h1>Kim Shin E. Del Amen</h1>
-      <p class="role">BSIT-WMA</p>
-      <p class="role">FEU Institute of Technology</p>
-
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kim Shin E. Del Amen | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">KS<span>DA</span></a>
       <nav>
-        <button class="tab active" data-page="home">Home</button>
-        <button class="tab" data-page="projects">Projects</button>
-        <button class="tab" data-page="skills">Skills</button>
-        <button class="tab" data-page="certifications">Certificates</button>
-        <button class="tab" data-page="contact">Contact</button>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#credentials">Credentials</a>
       </nav>
+      <a class="header-cta" href="#contact">Let's connect ↗</a>
+    </header>
 
-      <p class="status">Seeking internship opportunities</p>
-      <footer>© 2026 Kim Shin E. Del Amen</footer>
-    </aside>
-
-    <main>
-      <!-- HOME -->
-      <section id="home" class="active">
-        <header>
-          <small>My Portfolio</small>
-          <button class="primary" id="resumeBtn">View Resume ➜</button>
-        </header>
-
-        <div class="hero">
-          <h2>Aspiring Data Analyst and Quality Assurance Professional</h2>
-          <p>I am a fourth-year Information Technology student and aspiring data analyst with a strong interest in data management, analysis, and quality assurance. As I prepare for my internship, I am eager to apply my technical skills, gain hands-on experience, and contribute to the company’s growth.</p>
+    <main id="top">
+      <!-- ========== HERO / ABOUT ========== -->
+      <section class="hero section-grid" id="about">
+        <div>
+          <p class="eyebrow"><i></i> Available for internship opportunities</p>
+          <p class="hero-kicker">Hello, I am</p>
+          <h1>Kim Shin<br /><em>Del Amen.</em></h1>
+          <h2>Aspiring Data Analyst, Data Management, <b>&amp;</b> Quality Assurance Professional.</h2>
+          <p class="description">
+            A fourth-year Information Technology student who turns data, ideas, and user needs into
+            clear, reliable digital experiences. I am ready to learn fast, contribute carefully, and
+            grow with a collaborative team.
+          </p>
+          <div class="hero-actions">
+            <button class="button pink" id="resumeBtn">View resume ↓</button>
+            <a class="button" href="#projects">Explore my work ↘</a>
+          </div>
         </div>
 
-        <div class="contact-info">
-          <span>📍 San Jose del Monte City</span>
-          <span>📞 639656912338</span>
-          <span>✉️ delamenkimshin@gmail.com</span>
+        <aside class="hero-card">
+          <div class="profile">
+            <img src="media/1X1.png" alt="Kim Shin Del Amen" />
+          </div>
+          <p>Based in</p>
+          <strong>San Jose del Monte, PH</strong>
+          <hr />
+          <p>Focus areas</p>
+          <strong>Data Analyst · Data Management · QA</strong>
+          <div class="available"><i></i> Open to opportunities</div>
+        </aside>
+      </section>
+
+      <!-- ========== PROOF ========== -->
+      <section class="proof">
+        <div>
+          <b>04</b>
+          <p>Years studying<br />Information Technology</p>
         </div>
-
-        <div class="dashboard">
-          <article class="panel">
-            <h3>Education</h3>
-            <div class="timeline">
-              <div class="timeline-item">
-                <span class="timeline-date">Aug 2023 - Present</span>
-                <div class="timeline-content">
-                  <h4>FEU Institute of Technology</h4>
-                  <p>Bachelor of Science in Information Technology</p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <span class="timeline-date">Sep 2021 - Aug 2023</span>
-                <div class="timeline-content">
-                  <h4>STI College San Jose Del Monte</h4>
-                  <p>ICT</p>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="panel">
-            <h3>Organizations</h3>
-            <div class="org-list">
-              <div class="org-item">
-                <h4>FEU Tech Alliance of Information Technology Students</h4>
-                <p>Junior Officer for Documentation</p>
-                <small>Aug 2025 - Jul 2026</small>
-              </div>
-              <div class="org-item">
-                <h4>FEU Tech Alliance of Information Technology Students</h4>
-                <p>Junior Officer for Documentation</p>
-                <small>Aug 2024 - Jul 2025</small>
-              </div>
-              <div class="org-item">
-                <h4>FEU Tech Association of Student Technopreneurs and Innovators</h4>
-                <p>Junior Officer for Logistic</p>
-                <small>Aug 2023 - Jul 2024</small>
-              </div>
-            </div>
-          </article>
-
-          <article class="panel seminar-panel">
-            <h3>Seminars & Trainings</h3>
-            <div class="seminar-list">
-
-              <!-- September 24, 2026 -->
-              <div class="seminar-item">
-                <div class="seminar-icon">📊</div>
-                <div class="seminar-content">
-                  <div class="seminar-meta">
-                    <span class="seminar-tag">ATTENDEE</span>
-                    <span class="seminar-date">September 24, 2026</span>
-                  </div>
-                  <h4>DATA ANALYTICS FOR DECISION-MAKING: Turn Data Into Insights, Turn Insights Into Action</h4>
-                  <p>Awarded by <b>MVConsultancy</b></p>
-                  <a href="#" class="credential-link" data-cert="seminar1">View Certificate ↗</a>
-                </div>
-              </div>
-
-              <!-- September 03, 2026 -->
-              <div class="seminar-item">
-                <div class="seminar-icon">🗄️</div>
-                <div class="seminar-content">
-                  <div class="seminar-meta">
-                    <span class="seminar-tag">PARTICIPANT</span>
-                    <span class="seminar-date">September 03, 2026</span>
-                  </div>
-                  <h4>Learn SQL and Data Management</h4>
-                  <p>Awarded by <b>Ethel Programming Computer Programming Services</b></p>
-                  <a href="#" class="credential-link" data-cert="seminar2">View Certificate ↗</a>
-                </div>
-              </div>
-
-              <!-- June 26, 2026 -->
-              <div class="seminar-item">
-                <div class="seminar-icon">🤖</div>
-                <div class="seminar-content">
-                  <div class="seminar-meta">
-                    <span class="seminar-tag">ATTENDEE</span>
-                    <span class="seminar-date">June 26, 2026</span>
-                  </div>
-                  <h4>OpenAI Campus Launch: Parallel Session/Workshop 5 — Use AI to Get Ahead Early Prompt Engineering</h4>
-                  <p>Awarded by <b>FEU Tech Industry-Academe Linkage, Alumni, and Placement</b></p>
-                </div>
-              </div>
-
-            </div>
-          </article>
+        <div>
+          <b>05</b>
+          <p>Web and mobile<br />projects completed</p>
+        </div>
+        <div>
+          <b>08</b>
+          <p>Professional<br />certifications earned</p>
+        </div>
+        <div>
+          <b>03</b>
+          <p>Student organization<br />leadership roles</p>
         </div>
       </section>
 
-      <!-- PROJECTS -->
-      <section id="projects">
-        <header>
-          <small>Portfolio</small>
-          <button class="primary" data-go="contact">Contact ➜</button>
-        </header>
-        <h2 class="page-title">Accomplished Projects</h2>
-        <p class="page-copy">My work combines front-end development, interface design, and quality assurance.</p>
-        
-        <div class="cards">
-          <a href="https://fairall.site/" class="project-card">
+      <!-- ========== PROJECTS ========== -->
+      <section class="section" id="projects">
+        <div class="heading">
+          <p class="eyebrow">01 / Selected work</p>
+          <h2>Projects that show how I <em>build.</em></h2>
+          <p>
+            From interface design to testing, these projects reflect my hands-on experience in
+            creating useful, engaging digital products.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <a href="https://fairall.site/" target="_blank" class="project featured">
+            <span>01 · Game platform · UI/UX · QA</span>
             <h3>FAIRALL</h3>
-            <p>Third-person role-playing game. Roles: Web UI/UX Designer, Front-End Developer, and Web Quality Assurance.</p>
-            <span class="project-link">View Project ➜</span>
+            <p>
+              Third-person role-playing game where I worked as a Web UI/UX Designer, Front-End
+              Developer, and Web Quality Assurance member.
+            </p>
+            <b>Visit project ↗</b>
           </a>
-          <a href="#" class="project-card">
-            <h3>KlasKo</h3>
-            <p>Mobile application for student information management. Role: Front-End Developer.</p>
-            <span class="project-link"></span>
-          </a>
-          <a href="https://venusia.site.je/" class="project-card">
+
+          <a href="https://venusia.site.je/" target="_blank" class="project">
+            <span>02 · E-commerce · Front-end</span>
             <h3>Venusia</h3>
-            <p>E-commerce website for women’s clothing. Role: Front-End Developer.</p>
-            <span class="project-link">View Project ➜</span>
+            <p>
+              A women’s clothing e-commerce website designed to make browsing and shopping feel
+              seamless.
+            </p>
+            <b>Visit project ↗</b>
           </a>
-          <a href="#" class="project-card">
-            <h3>Petalgram</h3>
-            <p>Web-based flower shop. Roles: Front-End Developer and Web Designer.</p>
-            <span class="project-link"></span>
-          </a>
-          <a href="https://pokemonix.github.io/" class="project-card">
+
+          <article class="project">
+            <span>03 · Mobile app · Front-end</span>
+            <h3>KlasKo</h3>
+            <p>
+              A student information management mobile application developed with clear user flows.
+            </p>
+          </article>
+
+          <a href="https://pokemonix.github.io/" target="_blank" class="project">
+            <span>04 · Web store · Design</span>
             <h3>Pokemonix</h3>
-            <p>Pokémon-themed web store. Roles: Web Designer and Front-End Developer.</p>
-            <span class="project-link">View Project ➜</span>
+            <p>
+              A Pokémon-themed web store where I handled visual design and front-end development.
+            </p>
+            <b>Visit project ↗</b>
           </a>
+
+          <article class="project">
+            <span>05 · Web shop · Front-end</span>
+            <h3>Petalgram</h3>
+            <p>A web-based flower shop created for a friendly, simple shopping experience.</p>
+          </article>
         </div>
       </section>
 
-      <!-- SKILLS -->
-      <section id="skills">
-        <header>
-          <small>Capabilities</small>
-          <button class="primary" data-go="contact">Contact ➜</button>
-        </header>
-        <h2 class="page-title">Skills</h2>
-        <p class="page-copy">Technical and professional skills for an internship role.</p>
-        
-        <div class="skills-container">
-          <div class="skill-item">
-            <div class="skill-header">
-              <span>Python</span>
-              <span class="skill-level">Novice <span class="skill-percent">(50%)</span></span>
+      <!-- ========== SKILLS ========== -->
+      <section class="section skills" id="skills">
+        <div class="heading">
+          <p class="eyebrow">02 / Capabilities</p>
+          <h2>Ready to learn,<br /><em>ready to contribute.</em></h2>
+        </div>
+
+        <div>
+          <div class="skill">
+            <div>
+              <b>Front-end Development</b>
+              <small>HTML · CSS · JavaScript</small>
             </div>
-            <div class="progress-bar"><div class="progress" style="width: 50%;"></div></div>
+            <strong>65%</strong>
+            <i style="--fill: 65%"></i>
           </div>
 
-          <div class="skill-item">
-            <div class="skill-header">
-              <span>Adaptability</span>
-              <span class="skill-level">Advanced <span class="skill-percent">(75%)</span></span>
+          <div class="skill">
+            <div>
+              <b>Database Management</b>
+              <small>SQL · Data organization</small>
             </div>
-            <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+            <strong>55%</strong>
+            <i style="--fill: 55%"></i>
           </div>
 
-          <div class="skill-item">
-            <div class="skill-header">
-              <span>Quality Assurance</span>
-              <span class="skill-level">Novice <span class="skill-percent">(45%)</span></span>
+          <div class="skill">
+            <div>
+              <b>Python</b>
+              <small>Data foundations</small>
             </div>
-            <div class="progress-bar"><div class="progress" style="width: 45%;"></div></div>
+            <strong>50%</strong>
+            <i style="--fill: 50%"></i>
           </div>
 
-          <div class="skill-item">
-            <div class="skill-header">
-              <span>Frontend Development</span>
-              <span class="skill-level">Competent <span class="skill-percent">(65%)</span></span>
+          <div class="skill">
+            <div>
+              <b>Quality Assurance</b>
+              <small>Testing · Detail orientation</small>
             </div>
-            <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
+            <strong>45%</strong>
+            <i style="--fill: 45%"></i>
           </div>
 
-          <div class="skill-item">
-            <div class="skill-header">
-              <span>Database Management</span>
-              <span class="skill-level">Beginner <span class="skill-percent">(55%)</span></span>
-            </div>
-            <div class="progress-bar"><div class="progress" style="width: 55%;"></div></div>
-          </div>
+          <aside class="approach">
+            <span>MY APPROACH</span>
+            <h3>Curious, organized, and <em>quality-minded.</em></h3>
+            <ul>
+              <li>Adapt quickly to new tools and workflows</li>
+              <li>Document work clearly and accurately</li>
+              <li>Balance user experience with technical detail</li>
+            </ul>
+          </aside>
         </div>
       </section>
 
-      <!-- CERTIFICATIONS -->
-      <section id="certifications">
-        <header>
-          <small>Credentials</small>
-          <button class="primary" data-go="contact">Contact ➜</button>
-        </header>
-        <h2 class="page-title">Certifications</h2>
-        
-        <div class="cards">
-          <div class="cert-card" data-cert="cert1">
-            <h3>PMI Project Management Ready</h3>
-            <p>March 17, 2026</p>
-            <small>Issued by Project Management Institute</small>
-            <span class="cert-hint">Click to view ↗</span>
-          </div>
-          <div class="cert-card" data-cert="cert2">
+      <!-- ========== CREDENTIALS ========== -->
+      <section class="section" id="credentials">
+        <div class="heading">
+          <p class="eyebrow">03 / Credentials</p>
+          <h2>Learning with <em>intention.</em></h2>
+          <p>
+            Industry certifications and training that continue to shape my technical foundation.
+          </p>
+        </div>
+
+        <div class="cert-grid">
+          <button class="cert" data-cert="cert1">
+            <span>PMI</span>
+            <h3>Project Management Ready</h3>
+            <p>Project Management Institute · 2026</p>
+          </button>
+
+          <button class="cert" data-cert="cert2">
+            <span>Cisco</span>
             <h3>DevNet Associate</h3>
-            <p>March 16, 2026</p>
-            <small>Issued by Cisco Networking Academy</small>
-            <span class="cert-hint">Click to view ↗</span>
-          </div>
-          <div class="cert-card" data-cert="cert3">
+            <p>Cisco Networking Academy · 2026</p>
+          </button>
+
+          <button class="cert" data-cert="cert3">
+            <span>Linux</span>
             <h3>Linux Essentials</h3>
-            <p>December 16, 2025</p>
-            <small>Issued by Cisco Networking Academy</small>
-            <span class="cert-hint">Click to view ↗</span>
-          </div>
-          <div class="cert-card" data-cert="cert4">
-            <h3>CCNA: Enterprise Networking, Security, and Automation</h3>
-            <p>October 15, 2025</p>
-            <small>Issued by Cisco Networking Academy</small>
-            <span class="cert-hint">Click to view ↗</span>
-          </div>
-          <div class="cert-card" data-cert="cert5">
-            <h3>CCNA: Switching, Routing, and Wireless Essentials</h3>
-            <p>March 19, 2025</p>
-            <small>Issued by Cisco Networking Academy</small>
-            <span class="cert-hint">Click to view ↗</span>
-          </div>
-          <div class="cert-card" data-cert="cert6">
-            <h3>Cisco Certified Support Technician Networking</h3>
-            <p>February 10, 2025</p>
-            <small>Issued by Certiport</small>
-            <span class="cert-hint">Click to view ↗</span>
-          </div>
-          <div class="cert-card" data-cert="cert7">
-            <h3>Information Technology Specialist in Python</h3>
-            <p>February 10, 2025</p>
-            <small>Issued by Certiport</small>
-            <span class="cert-hint">Click to view ↗</span>
-          </div>
-          <div class="cert-card" data-cert="cert8">
-            <h3>CCNA: Introduction to Networks</h3>
-            <p>February 07, 2025</p>
-            <small>Issued by Cisco Networking Academy</small>
-            <span class="cert-hint">Click to view ↗</span>
-          </div>
+            <p>Cisco Networking Academy · 2025</p>
+          </button>
+
+          <button class="cert" data-cert="cert4">
+            <span>CCNA</span>
+            <h3>Enterprise Networking, Security &amp; Automation</h3>
+            <p>Cisco Networking Academy · 2025</p>
+          </button>
+
+          <button class="cert" data-cert="cert5">
+            <span>CCNA</span>
+            <h3>Switching, Routing &amp; Wireless</h3>
+            <p>Cisco Networking Academy · 2025</p>
+          </button>
+
+          <button class="cert" data-cert="cert7">
+            <span>Python</span>
+            <h3>IT Specialist in Python</h3>
+            <p>Certiport · 2025</p>
+          </button>
         </div>
       </section>
 
-      <!-- CONTACT -->
-      <section id="contact">
-        <header>
-          <small>Contact</small>
-          <button class="primary" data-go="home">Dashboard ↗</button>
-        </header>
-        <h2 class="page-title">Let’s Work With Data.</h2>
-        <p class="page-copy">I am seeking a Data Analyst internship where I can learn from professionals and contribute meaningful analysis.</p>
-        
-        <div class="contacts">
-          <a href="mailto:delamenkimshin@gmail.com">
-            <span class="contact-icon">✉</span>
-            <div class="contact-details">
-              <span class="contact-label">Email</span>
-              <span class="contact-value">delamenkimshin@gmail.com</span>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/kim-shin-del-amen-299067381/" target="_blank" rel="noopener">
-            <span class="contact-icon">in</span>
-            <div class="contact-details">
-              <span class="contact-label">LinkedIn</span>
-              <span class="contact-value">Kim Shin Del Amen</span>
-            </div>
-          </a>
-          <a href="https://github.com/KimShinDA" target="_blank" rel="noopener">
-            <span class="contact-icon">⌘</span>
-            <div class="contact-details">
-              <span class="contact-label">GitHub</span>
-              <span class="contact-value">KimShinDA</span>
-            </div>
-          </a>
-          <a href="tel:+639656912338">
-            <span class="contact-icon">☏</span>
-            <div class="contact-details">
-              <span class="contact-label">Phone</span>
-              <span class="contact-value">+63 965 691 2338</span>
-            </div>
-          </a>
+      <!-- ========== CONTACT ========== -->
+      <section class="section contact" id="contact">
+        <p class="eyebrow">04 / Get in touch</p>
+        <h2>Let’s create something <em>meaningful.</em></h2>
+        <p>
+          I am currently looking for a Data Analyst, Data Managemet, or Quality Assurance internship where I can learn from professionals
+          and contribute meaningful analysis.
+        </p>
+        <div>
+          <a href="mailto:delamenkimshin@gmail.com">delamenkimshin@gmail.com ↗</a>
+          <a href="https://www.linkedin.com/in/kim-shin-del-amen-299067381/" target="_blank"
+            >LinkedIn ↗</a
+          >
+          <a href="https://github.com/KimShinDA" target="_blank">GitHub ↗</a>
         </div>
       </section>
     </main>
-  </div>
 
-  <!-- RESUME MODAL -->
-  <div class="modal" id="resumeModal">
-    <div class="modal-content resume-modal-content">
-      <span class="close-modal" id="closeResume">&times;</span>
-      <div class="resume-header">
+    <footer>
+      <span>© 2026 KIM SHIN E. DEL AMEN</span>
+    </footer>
+
+    <!-- ========== RESUME MODAL ========== -->
+    <div class="modal" id="resumeModal">
+      <div class="modal-content">
+        <button class="close" id="closeResume">×</button>
         <h3>Kim Shin E. Del Amen — Resume</h3>
-        <a href="media/DEL-AMEN-KSDA-RESUME.pdf" download class="download-btn">
-          ⎙ Download PDF
-        </a>
-      </div>
-      <div class="resume-viewer">
-        <iframe 
-          id="resumeFrame"
-          src="media/DEL-AMEN-KSDA-RESUME.pdf#toolbar=1&navpanes=0&scrollbar=1" 
-          title="Resume PDF"
-          frameborder="0">
-        </iframe>
-        <p class="resume-fallback">
-          Can't view the resume? 
-          <a href="https://drive.google.com/file/d/1lVCYHQKdJxRSyBM1iI5M-V28nsEPjJP_/view?usp=sharing" target="_blank" rel="noopener">Open in Google Drive ↗</a>
-        </p>
+        <iframe src="media/DEL-AMEN-KSDA-RESUME.pdf#toolbar=1" title="Resume PDF"></iframe>
       </div>
     </div>
-  </div>
 
-  <!-- CERTIFICATE MODAL -->
-  <div class="modal" id="certModal">
-    <div class="modal-content">
-      <span class="close-modal" id="closeCert">&times;</span>
-      <h3 id="modalTitle">Certificate Title</h3>
-      <div class="modal-image-space">
-        <img id="modalImage" src="" alt="Certificate Image">
-        <p id="modalPlaceholder">Certificate image will appear here</p>
+    <!-- ========== CERTIFICATE MODAL ========== -->
+    <div class="modal" id="certModal">
+      <div class="modal-content">
+        <button class="close" id="closeCert">×</button>
+        <h3 id="modalTitle">Certificate</h3>
+        <img id="modalImage" alt="Certificate image" />
+        <p id="modalPlaceholder"></p>
       </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

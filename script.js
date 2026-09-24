@@ -1,48 +1,13 @@
-// =========================
-// Navigation Logic
-// =========================
-const tabs = document.querySelectorAll(".tab");
-const sections = document.querySelectorAll("section");
-const pageButtons = document.querySelectorAll("[data-go]");
-
-function showPage(pageId) {
-  sections.forEach((section) => {
-    section.classList.toggle("active", section.id === pageId);
-  });
-
-  tabs.forEach((tab) => {
-    tab.classList.toggle("active", tab.dataset.page === pageId);
-  });
-}
-
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    showPage(tab.dataset.page);
-  });
-});
-
-pageButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    showPage(button.dataset.go);
-  });
-});
-
-// =========================
-// Element References
-// =========================
 const resumeModal = document.getElementById("resumeModal");
+const certModal = document.getElementById("certModal");
 const resumeBtn = document.getElementById("resumeBtn");
 const closeResume = document.getElementById("closeResume");
+const closeCert = document.getElementById("closeCert");
 
-const modal = document.getElementById("certModal");
 const modalTitle = document.getElementById("modalTitle");
 const modalImage = document.getElementById("modalImage");
 const modalPlaceholder = document.getElementById("modalPlaceholder");
-const closeCert = document.getElementById("closeCert");
 
-// =========================
-// Certificate Image Map
-// =========================
 const certificateImages = {
   cert1: "media/KSDA-PMI-CERT.jpg",
   cert2: "media/DEVNET.jpg",
@@ -56,113 +21,65 @@ const certificateImages = {
   seminar2: "media/SQL-DATA-MANAGEMENT.png"
 };
 
-// =========================
-// Resume Modal Open
-// =========================
-if (resumeBtn && resumeModal) {
-  resumeBtn.addEventListener("click", () => {
-    resumeModal.classList.add("active");
-  });
+function closeModal(modal) {
+  modal.classList.remove("active");
 }
 
-// =========================
-// Certificate Modal Helpers
-// =========================
-function resetModalMedia() {
+function openCertificate(title, imagePath) {
+  modalTitle.textContent = title;
   modalImage.style.display = "none";
-  modalImage.src = "";
   modalPlaceholder.style.display = "none";
   modalPlaceholder.textContent = "";
-}
 
-function openCertModal(title, src) {
-  resetModalMedia();
-  modalTitle.textContent = title;
+  modalImage.src = imagePath;
 
-  if (src) {
-    modalImage.src = src;
+  modalImage.onload = () => {
     modalImage.style.display = "block";
-    modalImage.onerror = () => {
-      modalImage.style.display = "none";
-      modalPlaceholder.style.display = "block";
-      modalPlaceholder.textContent =
-        "Certificate image not found. Please check the file path.";
-    };
-  } else {
+  };
+
+  modalImage.onerror = () => {
+    modalPlaceholder.textContent =
+      "Certificate image not found. Please check the file path.";
     modalPlaceholder.style.display = "block";
-    modalPlaceholder.textContent = "Certificate image will appear here";
-  }
+  };
 
-  modal.classList.add("active");
+  certModal.classList.add("active");
 }
 
-// =========================
-// Certification Cards
-// =========================
-document.querySelectorAll(".cert-card").forEach((card) => {
+resumeBtn.addEventListener("click", () => {
+  resumeModal.classList.add("active");
+});
+
+closeResume.addEventListener("click", () => {
+  closeModal(resumeModal);
+});
+
+closeCert.addEventListener("click", () => {
+  closeModal(certModal);
+});
+
+document.querySelectorAll(".cert").forEach((card) => {
   card.addEventListener("click", () => {
-    const certId = card.dataset.cert;
-    const certTitle = card.querySelector("h3").textContent;
-    openCertModal(certTitle, certificateImages[certId]);
+    const title = card.querySelector("h3").textContent;
+    const imagePath = certificateImages[card.dataset.cert];
+
+    openCertificate(title, imagePath);
   });
 });
 
-// =========================
-// Seminar Credential Links
-// =========================
-document.querySelectorAll(".credential-link").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const certId = link.dataset.cert;
-    const certTitle = link
-      .closest(".seminar-content")
-      .querySelector("h4").textContent;
-    openCertModal(certTitle, certificateImages[certId]);
-  });
-});
-
-// =========================
-// Close Buttons (with stopPropagation)
-// =========================
-if (closeResume && resumeModal) {
-  closeResume.addEventListener("click", (e) => {
-    e.stopPropagation();
-    resumeModal.classList.remove("active");
-  });
-}
-
-if (closeCert && modal) {
-  closeCert.addEventListener("click", (e) => {
-    e.stopPropagation();
-    modal.classList.remove("active");
-    resetModalMedia();
-  });
-}
-
-// =========================
-// Click Outside to Close
-// =========================
-window.addEventListener("click", (e) => {
-  if (e.target === resumeModal) {
-    resumeModal.classList.remove("active");
+window.addEventListener("click", (event) => {
+  if (event.target === resumeModal) {
+    closeModal(resumeModal);
   }
-  if (e.target === modal) {
-    modal.classList.remove("active");
-    resetModalMedia();
+
+  if (event.target === certModal) {
+    closeModal(certModal);
   }
 });
 
-// =========================
-// Escape Key to Close
-// =========================
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    if (resumeModal && resumeModal.classList.contains("active")) {
-      resumeModal.classList.remove("active");
-    }
-    if (modal && modal.classList.contains("active")) {
-      modal.classList.remove("active");
-      resetModalMedia();
-    }
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeModal(resumeModal);
+    closeModal(certModal);
   }
 });
